@@ -7,3 +7,10 @@ export const COUNTRIES = gql`
     }
   }
 `;
+
+export const COUNTRY_INFO = gql`query {
+  countries (filter: {code: {eq: "AD"}}) {
+    name
+    code
+  }
+}`;

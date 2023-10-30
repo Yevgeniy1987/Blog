@@ -289,7 +289,12 @@ const COUNTRIES = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2
       name
     }
   }
-`;
+`; // export const COUNTRY_INFO = gql`query {
+ //   countries (filter: {code: {eq: "AD"}}) {
+ //     name
+ //     code
+ //   }
+ // }`;
 
 })()),
 "[project]/src/app/countries/page.tsx (ecmascript, rsc)": (({ r: __turbopack_require__, f: __turbopack_require_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, l: __turbopack_load__, j: __turbopack_dynamic__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__ }) => (() => {
@@ -300,7 +305,9 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/future/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js (ecmascript, rsc)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$graphql$2f$queries$2f$COUNTRIES_Q$2e$ts__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/graphql/queries/COUNTRIES_Q.ts (ecmascript, rsc)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$apolloClient$2e$ts__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/lib/apolloClient.ts (ecmascript, rsc)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/link.js (ecmascript, rsc)");
 "__TURBOPACK__ecmascript__hoisting__location__";
+;
 ;
 ;
 ;
@@ -316,27 +323,41 @@ async function Countries() {
                 children: "Countries"
             }, void 0, false, {
                 fileName: "<[project]/src/app/countries/page.tsx>",
-                lineNumber: 11,
+                lineNumber: 13,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("ol", {
                 className: "mt-4 list-decimal",
                 children: countries.map((country)=>/*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("li", {
-                        children: country.name
+                        children: /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("h2", {
+                            children: /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"](__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$28$ecmascript$29$__["default"], {
+                                href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$graphql$2f$queries$2f$COUNTRIES_Q$2e$ts__$28$ecmascript$29$__["COUNTRIES"],
+                                className: "hover:underline",
+                                children: country.name
+                            }, void 0, false, {
+                                fileName: "<[project]/src/app/countries/page.tsx>",
+                                lineNumber: 19,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "<[project]/src/app/countries/page.tsx>",
+                            lineNumber: 18,
+                            columnNumber: 13
+                        }, this)
                     }, country.name, false, {
                         fileName: "<[project]/src/app/countries/page.tsx>",
-                        lineNumber: 15,
+                        lineNumber: 17,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "<[project]/src/app/countries/page.tsx>",
-                lineNumber: 13,
+                lineNumber: 15,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "<[project]/src/app/countries/page.tsx>",
-        lineNumber: 10,
+        lineNumber: 12,
         columnNumber: 5
     }, this);
 }

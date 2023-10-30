@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/src/components/Timer.tsx"],"sourcesContent":["'use client';\n\nimport { useEffect, useState } from 'react';\n\nexport const Timer = () => {\n  const [seconds, setSeconds] = useState(0);\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setSeconds((s) => s + 1);\n    }, 1000);\n\n    return () => clearInterval(interval);\n  }, []);\n  \n  return <p className=\"text-sm\">{seconds} seconds</p>;\n};\n"],"names":[],"mappings":";;;;;;;;AAAA;;AAIO,MAAM,QAAQ;;IACnB,MAAM,CAAC,SAAS,WAAW,GAAG,mJAAS;IAEvC,oJAAU;QACR,MAAM,WAAW,YAAY;YAC3B,WAAW,CAAC,IAAM,IAAI;QACxB,GAAG;QAEH,OAAO,IAAM,cAAc;IAC7B,GAAG,EAAE;IAEL,qBAAO,iKAAC;QAAE,WAAU;;YAAW;YAAQ;;;;;;;AACzC;GAZa;KAAA"}},
+    {"offset": {"line": 39, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

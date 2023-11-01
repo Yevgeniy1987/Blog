@@ -1,14 +1,14 @@
-import { Metadata } from "next";
-import Link from "next/link";
+import { POSTS } from '@/graphql/queries/POSTS_Q';
+import { apolloClient } from '@/lib/apolloClient';
+import { Metadata } from 'next';
+import Link from 'next/link';
 
 async function getAllPosts() {
-  const response = await fetch('http://localhost:3333/posts');
+  const { data } = await apolloClient.query({ query: POSTS });
 
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
+  const posts = data.posts;
 
-  return response.json();
+  return posts;
 }
 
 type Post = {
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   title: 'Blog'
 };
 
-
 export default async function Blog() {
   const posts = await getAllPosts();
 
@@ -33,7 +32,11 @@ export default async function Blog() {
       <ol className="mt-4 list-decimal">
         {posts.map((post: Post) => (
           <li key={post.id}>
-            <h2><Link href={`/blog/${post.id}`} className="hover:underline">{post.title}</Link></h2>
+            <h2>
+              <Link href={`/blog/${post.id}`} className="hover:underline">
+                {post.title}
+              </Link>
+            </h2>
           </li>
         ))}
       </ol>

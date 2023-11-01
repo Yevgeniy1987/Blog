@@ -1,6 +1,8 @@
-import { COUNTRIES } from "@/graphql/queries/COUNTRIES_Q";
-import { apolloClient } from "@/lib/apolloClient";
-import { Metadata } from "next";
+import { COUNTRIES } from '@/graphql/queries/COUNTRIES_Q';
+import { COUNTRY } from '@/graphql/queries/COUNTRY_Q';
+import { apolloClient } from '@/lib/apolloClient';
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation'
 
 type Props = {
   params: {
@@ -9,27 +11,23 @@ type Props = {
 };
 
 async function getCountryInfo(code: string) {
-  const COUNTRY_INFO = `query {
-    countries (filter: {code: {eq: "${code}"}}) {
-      name
-      code
-    }
-  }`;
-  const { data } = await apolloClient.query({ query: COUNTRY_INFO });
+  const { data } = await apolloClient.query({
+    query: COUNTRY,
+    variables: { code }
+  });
 
-  const countryInfo = data.country;
+  const countryInfo = data.countries[0];
 
-  return countryInfo.map((country: { code: string }) => ({
-    code: country.code.toString(),
-  }));
+  return countryInfo;
 }
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const countryCode = params.code;
 
   const country = await getCountryInfo(countryCode);
 
   return {
-    title: country.title,
+    title: country?.name || 'Unknown Country'
   };
 }
 
@@ -39,7 +37,7 @@ export async function generateStaticParams() {
   const countries = data.countries;
 
   return countries.map((country: { code: string }) => ({
-    code: country.code.toString(),
+    code: country.code
   }));
 }
 
@@ -48,12 +46,18 @@ export default async function Country({ params }: Props) {
 
   const country = await getCountryInfo(countryCode);
 
+  if (!country) {
+    notFound()
+  }
+
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-xl uppercase">{country.name}</h1>
+
+      <p>Continent: {country.continent.name}</p>
       <p>
-        {country.continent.name}
-        {country.language.name}
+        Languages:{' '}
+        {country.languages.map((language: any) => language.name).join(', ')}
       </p>
     </div>
   );

@@ -1,16 +1,13 @@
-import { gql } from "@apollo/client";
+import { COUNTRY_F } from '@/graphql/fragments/COUNTRY_F';
+import { gql } from '@apollo/client';
 
 export const COUNTRIES = gql`
+  ${COUNTRY_F}
   query Countries {
     countries {
-      name
+      ...CountryFields
     }
   }
 `;
 
-export const COUNTRY_INFO = gql`query {
-  countries (filter: {code: {eq: "AD"}}) {
-    name
-    code
-  }
-}`;
+

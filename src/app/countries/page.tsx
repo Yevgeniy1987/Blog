@@ -1,4 +1,4 @@
-import { COUNTRIES, COUNTRY_INFO } from "@/graphql/queries/COUNTRIES_Q";
+import { COUNTRIES } from "@/graphql/queries/COUNTRIES_Q";
 import { apolloClient } from "@/lib/apolloClient";
 import Link from "next/link";
 
@@ -13,15 +13,13 @@ export default async function Countries() {
 
       <ol className="mt-4 list-decimal">
         {countries.map((country: any) => (
-          <li key={country.name}>
+          <li key={country.code}>
             <h2>
-              <Link href={ COUNTRY_INFO } className="hover:underline">
+              <Link href={`/countries/${country.code}`} className="hover:underline">
                 {country.name}
               </Link>
             </h2>
           </li>
-
-          // <li key={country.name}>{country.name}</li>
         ))}
       </ol>
     </div>

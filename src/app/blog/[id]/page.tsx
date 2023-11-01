@@ -27,20 +27,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {
-  const response = await fetch('http://localhost:3333/posts');
-
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-
-  const posts = await response.json();
-
-  return posts.map((post: { id: number }) => ({
-    id: post.id.toString()
-  }));
-}
-
 export default async function Post({ params }: Props) {
   const postId = params.id;
 

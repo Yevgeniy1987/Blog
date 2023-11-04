@@ -8,11 +8,7 @@ export const { getClient } = registerApolloClient(() => {
   return new NextSSRApolloClient({
     cache: new InMemoryCache(),
     link: new HttpLink({
-      // uri: "https://countries.trevorblades.com/graphql",
       uri: "http://localhost:4444/api/graphql",
-      fetchOptions: { cache: "no-store" },
     }),
   });
 });
-
-export const apolloClient = getClient();

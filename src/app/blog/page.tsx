@@ -1,26 +1,32 @@
 import { POSTS } from '@/graphql/queries/POSTS_Q';
-import { apolloClient } from '@/lib/apolloClient';
+import { getClient } from '@/lib/apolloClient';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-async function getAllPosts() {
-  const { data } = await apolloClient.query({ query: POSTS });
-
-  const posts = data.posts;
-
-  return posts;
-}
-
 type Post = {
-  userId: number;
-  id: number;
+  id: string;
   title: string;
   body: string;
+  createdAt: string;
+  author: {
+    id: string;
+    nickname: string;
+  };
 };
 
 export const metadata: Metadata = {
   title: 'Blog'
 };
+
+export const revalidate = 1;
+
+async function getAllPosts() {
+  const { data } = await getClient().query({ query: POSTS });
+
+  const posts = data?.posts as Post[];
+
+  return posts;
+}
 
 export default async function Blog() {
   const posts = await getAllPosts();

@@ -9,7 +9,7 @@ export const POSTS = gql`
       createdAt
       author{
         id
-        name
+        nickname
       }
     }
   }

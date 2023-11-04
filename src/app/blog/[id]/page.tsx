@@ -1,5 +1,8 @@
 import { Timer } from '@/components/Timer';
+import { POST } from '@/graphql/queries/POST_Q';
+import { getClient } from '@/lib/apolloClient';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 type Props = {
   params: {
@@ -8,13 +11,14 @@ type Props = {
 };
 
 async function getPost(id: string) {
-  const response = await fetch(`http://localhost:3333/posts/${id}`);
+  const { data } = await getClient().query({
+    query: POST,
+    variables: { postId: id }
+  });
 
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
+  const post = data?.post;
 
-  return response.json();
+  return post;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -23,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(postId);
 
   return {
-    title: post.title
+    title: post?.title
   };
 }
 
@@ -31,6 +35,10 @@ export default async function Post({ params }: Props) {
   const postId = params.id;
 
   const post = await getPost(postId);
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <div className="flex flex-col gap-4">

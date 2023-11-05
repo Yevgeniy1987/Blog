@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/src/app/error.tsx"],"sourcesContent":["'use client';\n\nexport default function RootError({ error }: { error: Error }) {\n  console.log('RootError', error);\n\n  return <h1 className=\"text-xl uppercase text-red-700\">error</h1>;\n}\n"],"names":[],"mappings":";;;;;AAAA;;AAEe,SAAS,UAAU,KAA2B;QAA3B,EAAE,KAAK,EAAoB,GAA3B;IAChC,QAAQ,GAAG,CAAC,aAAa;IAEzB,qBAAO,iKAAC;QAAG,WAAU;kBAAiC;;;;;;AACxD;KAJwB"}},
+    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

@@ -13,6 +13,9 @@ export default function NavigationBar() {
         <li>
           <Link href="/about">About</Link>
         </li>
+        <li>
+          <Link href="/tag">Tags</Link>
+        </li>
       </ul>
     </nav>
   );

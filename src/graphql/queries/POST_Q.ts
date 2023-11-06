@@ -6,6 +6,16 @@ export const POST = gql`
       id
       title
       body
+      author{
+        nickname
+      }
+      comments{
+        body
+        author
+      }
+      tags{
+        
+      }
     }
   }
 `;

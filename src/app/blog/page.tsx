@@ -1,7 +1,9 @@
-import { POSTS } from '@/graphql/queries/POSTS_Q';
-import { getClient } from '@/lib/apolloClient';
-import { Metadata } from 'next';
-import Link from 'next/link';
+import { Button } from "@/components/button";
+import { POSTS } from "@/graphql/queries/POSTS_Q";
+import { getClient } from "@/lib/apolloClient";
+
+import { Metadata } from "next";
+import Link from "next/link";
 
 type Post = {
   id: string;
@@ -15,7 +17,7 @@ type Post = {
 };
 
 export const metadata: Metadata = {
-  title: 'Blog'
+  title: "Blog",
 };
 
 export const revalidate = 1;
@@ -33,19 +35,28 @@ export default async function Blog() {
 
   return (
     <>
-      <h1 className="text-xl uppercase">Blog page</h1>
+      <div>
+        <Button name="Relevant"></Button>
 
-      <ol className="mt-4 list-decimal">
-        {posts.map((post: Post) => (
-          <li key={post.id}>
-            <h2>
-              <Link href={`/blog/${post.id}`} className="hover:underline">
-                {post.title}
-              </Link>
-            </h2>
-          </li>
-        ))}
-      </ol>
+        <Button name="Latest"></Button>
+
+        <Button name="Top"></Button>
+      </div>
+      <div>
+        <h1 className="text-xl uppercase">Blog page</h1>
+
+        <ol className="mt-4 list-decimal">
+          {posts.map((post: Post) => (
+            <li key={post.id}>
+              <h2>
+                <Link href={`/blog/${post.id}`} className="hover:underline">
+                  {post.title}
+                </Link>
+              </h2>
+            </li>
+          ))}
+        </ol>
+      </div>
     </>
   );
 }

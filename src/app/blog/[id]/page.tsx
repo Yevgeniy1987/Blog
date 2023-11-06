@@ -7,10 +7,11 @@ import { notFound } from 'next/navigation';
 type Props = {
   params: {
     id: string;
+    author: string;
   };
 };
 
-async function getPost(id: string) {
+async function getPost(id: string ) {
   const { data } = await getClient().query({
     query: POST,
     variables: { postId: id }
@@ -33,6 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Post({ params }: Props) {
   const postId = params.id;
+  // const postAuthor = params.author;
 
   const post = await getPost(postId);
 
@@ -42,9 +44,11 @@ export default async function Post({ params }: Props) {
 
   return (
     <div className="flex flex-col gap-4">
-      <Timer />
+      <p>{post.author}</p>
       <h1 className="text-xl uppercase">{post.title}</h1>
       <p>{post.body}</p>
+      <p>{post.comments}</p>
+      <p>{post.tags}</p>
     </div>
   );
 }

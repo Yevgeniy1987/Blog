@@ -1,4 +1,4 @@
-import { TAG } from '@/graphql/queries/POST_Q';
+import { TAG } from '@/graphql/queries/TAG_Q';
 import { getClient } from '@/lib/apolloClient';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';

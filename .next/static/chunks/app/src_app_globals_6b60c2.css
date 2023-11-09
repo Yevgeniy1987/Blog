@@ -336,11 +336,11 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
-.mt-4 {
-  margin-top: 1rem;
-}
 .mt-3 {
   margin-top: 0.75rem;
+}
+.mt-4 {
+  margin-top: 1rem;
 }
 .flex {
   display: flex;
@@ -387,10 +387,6 @@ video {
 .border-solid {
   border-style: solid;
 }
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255/ var(--tw-border-opacity));
-}
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235/ var(--tw-bg-opacity));
@@ -403,9 +399,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255/ var(--tw-bg-opacity));
 }
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74/ var(--tw-bg-opacity));
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -414,10 +410,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 .text-sm {
   font-size: 0.875rem;
@@ -438,17 +430,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(185 28 28/ var(--tw-text-opacity));
 }
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255/ var(--tw-text-opacity));
-}
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255/ var(--tw-bg-opacity));
-}
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0/ var(--tw-text-opacity));
 }
 .hover\:underline:hover {
   text-decoration-line: underline;

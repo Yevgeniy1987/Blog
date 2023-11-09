@@ -1,8 +1,8 @@
-import { Timer } from '@/components/Timer';
-import { POST } from '@/graphql/queries/POST_Q';
-import { getClient } from '@/lib/apolloClient';
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { Timer } from "@/components/Timer";
+import { POST } from "@/graphql/queries/POST_Q";
+import { getClient } from "@/lib/apolloClient";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: {
@@ -11,10 +11,10 @@ type Props = {
   };
 };
 
-async function getPost(id: string ) {
+async function getPost(id: string) {
   const { data } = await getClient().query({
     query: POST,
-    variables: { postId: id }
+    variables: { postId: id },
   });
 
   const post = data?.post;
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(postId);
 
   return {
-    title: post?.title
+    title: post?.title,
   };
 }
 

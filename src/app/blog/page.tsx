@@ -1,4 +1,5 @@
-import { Button } from "@/components/button";
+
+import { Button } from "@/components/Button";
 import { POSTS } from "@/graphql/queries/POSTS_Q";
 import { getClient } from "@/lib/apolloClient";
 
@@ -36,11 +37,11 @@ export default async function Blog() {
   return (
     <>
       <div>
-        <Button name="Relevant"></Button>
+        {/* <Button name="Relevant"></Button>
 
         <Button name="Latest"></Button>
 
-        <Button name="Top"></Button>
+        <Button name="Top"></Button> */}
       </div>
       <div>
         <h1 className="text-xl uppercase">Blog page</h1>

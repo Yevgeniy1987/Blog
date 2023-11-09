@@ -1,15 +1,15 @@
 "use client";
 
-import { POSTS } from "@/graphql/queries/POSTS_Q";
+import { SEARCH } from "@/graphql/queries/SEARCH_Q";
 import { getClient } from "@/lib/apolloClient";
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 
 
 export function HeaderSearch() {
-  async function getPostInfo(title: string) {
+  async function getPostInfo(options: string) {
     const { data } = await getClient().query({
-      query: POSTS,
-      variables: { title },
+      query: SEARCH,
+      variables: { options },
     });
 
     const postInfo = data.posts[0];

@@ -11,7 +11,7 @@ export default function Header() {
             className="h-[40px] w-[50px]"
           />
         </a>
-        <HeaderSearch/>
+        {/* <HeaderSearch/> */}
       </div>
     </header>
   );

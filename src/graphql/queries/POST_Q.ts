@@ -14,7 +14,7 @@ export const POST = gql`
         author
       }
       tags{
-        
+        name
       }
     }
   }

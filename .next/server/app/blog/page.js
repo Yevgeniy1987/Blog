@@ -1,6 +1,6 @@
 const CHUNK_PUBLIC_PATH = "server/app/blog/page.js";
 const runtime = require("../../chunks/rsc/[turbopack]_runtime.js");
-runtime.loadChunk("server/chunks/rsc/[root of the server]__44e5ba._.js");
+runtime.loadChunk("server/chunks/rsc/[root of the server]__fa7970._.js");
 runtime.loadChunk("server/chunks/rsc/node_modules_next_7c6f19._.js");
 runtime.loadChunk("server/chunks/rsc/node_modules_@apollo_experimental-nextjs-app-support_dist_63ded8._.js");
 runtime.loadChunk("server/chunks/rsc/node_modules_@apollo_client_utilities_ff25f1._.js");

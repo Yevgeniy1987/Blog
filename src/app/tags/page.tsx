@@ -27,7 +27,7 @@ export default async function Tags() {
         {tags.map((tag: any) => (
           <li key={tag.name}>
             <h2>
-              <Link href={`/countries/${tag.name}`} className="hover:underline">
+              <Link href={`/tags/${tag.name}`} className="hover:underline">
                 {tag.name}
               </Link>
             </h2>

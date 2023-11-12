@@ -227,38 +227,29 @@ __turbopack_esm__({
     "default": ()=>Header
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/future/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js (ecmascript, rsc)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$search$2f$HeaderSearch$2e$tsx__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/components/search/HeaderSearch.tsx (ecmascript, rsc)");
 "__TURBOPACK__ecmascript__hoisting__location__";
-;
 ;
 function Header() {
     return /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("header", {
         children: /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("div", {
             className: "py-5 container mx-auto  bg-white",
-            children: [
-                /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("a", {
-                    href: "/",
-                    children: /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("img", {
-                        src: "https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png",
-                        alt: "Logo",
-                        className: "h-[40px] w-[50px]"
-                    }, void 0, false, {
-                        fileName: "<[project]/src/components/layout/Header.tsx>",
-                        lineNumber: 8,
-                        columnNumber: 11
-                    }, this)
+            children: /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("a", {
+                href: "/",
+                children: /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("img", {
+                    src: "https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png",
+                    alt: "Logo",
+                    className: "h-[40px] w-[50px]"
                 }, void 0, false, {
                     fileName: "<[project]/src/components/layout/Header.tsx>",
-                    lineNumber: 7,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"](__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$search$2f$HeaderSearch$2e$tsx__$28$ecmascript$29$__["HeaderSearch"], {}, void 0, false, {
-                    fileName: "<[project]/src/components/layout/Header.tsx>",
-                    lineNumber: 14,
-                    columnNumber: 9
+                    lineNumber: 8,
+                    columnNumber: 11
                 }, this)
-            ]
-        }, void 0, true, {
+            }, void 0, false, {
+                fileName: "<[project]/src/components/layout/Header.tsx>",
+                lineNumber: 7,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
             fileName: "<[project]/src/components/layout/Header.tsx>",
             lineNumber: 6,
             columnNumber: 7

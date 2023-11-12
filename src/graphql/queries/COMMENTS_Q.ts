@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const COMMENTS = gql`
   query Comments {
-    Comments {
+    comments {
       id
       body
       createdAt

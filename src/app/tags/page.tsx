@@ -24,7 +24,7 @@ export default async function Tags() {
       <h1 className="text-xl uppercase">Countries</h1>
 
       <ol className="mt-4 list-decimal">
-        {tags.map((tag: any) => (
+        {tags.map((tag: any) => ( 
           <li key={tag.name}>
             <h2>
               <Link href={`/tags/${tag.name}`} className="hover:underline">

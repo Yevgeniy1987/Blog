@@ -5,7 +5,8 @@ export const TAGS = gql`
     tags {
       name
       createdAt
-      post {
+      posts {
+        id
         title
         body
       }

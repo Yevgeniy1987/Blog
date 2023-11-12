@@ -1,13 +1,14 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const TAG = gql`
-  query Tag($tagName: string!) {
-    tag (where: { name: $tagName }) {
+  query Tag($tagName: String!) {
+    tag(where: { name: $tagName }) {
       name
       createdAt
-    }
-    posts{
+      posts {
+        id
         title
+      }
     }
   }
 `;

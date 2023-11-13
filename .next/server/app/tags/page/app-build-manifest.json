@@ -50,6 +50,8 @@
       "static/chunks/app/node_modules_next_dist_6c50d3._.js",
       "static/chunks/app/src_app_error_tsx_53d2d0._.js",
       "static/chunks/app/src_app_error_tsx_343e5f._.js",
+      "static/chunks/app/[next]_internal_font_google_inter_59dee874_module_d283bd.css",
+      "static/chunks/app/[next]_internal_font_google_inter_59dee874_module_css_45b5c7._.js",
       "static/chunks/app/node_modules_081703._.js",
       "static/chunks/app/node_modules_next_dist_client_link_e1ae46.js",
       "static/chunks/app/node_modules_@apollo_client_cache_6d9902._.js",
@@ -100,8 +102,8 @@
       "static/chunks/app/node_modules_next_dist_b32957._.js",
       "static/chunks/app/node_modules_@swc_helpers_08e12d._.js",
       "static/chunks/app/[turbopack]_dev_client_hmr-client_ts_d6dc70._.js",
-      "static/chunks/app/node_modules_next_dist_esm_build_templates_app-page_fbfc42.js",
-      "static/chunks/app/node_modules_next_dist_esm_build_templates_app-page_ff253b.js"
+      "static/chunks/app/node_modules_next_dist_esm_build_templates_app-page_8c32d6.js",
+      "static/chunks/app/node_modules_next_dist_esm_build_templates_app-page_398d29.js"
     ]
   }
 }

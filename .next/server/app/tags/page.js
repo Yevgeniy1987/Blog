@@ -1,7 +1,7 @@
 const CHUNK_PUBLIC_PATH = "server/app/tags/page.js";
 const runtime = require("../../chunks/rsc/[turbopack]_runtime.js");
-runtime.loadChunk("server/chunks/rsc/[root of the server]__94e702._.js");
-runtime.loadChunk("server/chunks/rsc/node_modules_next_f56769._.js");
+runtime.loadChunk("server/chunks/rsc/[root of the server]__a32f73._.js");
+runtime.loadChunk("server/chunks/rsc/node_modules_next_5ea4a3._.js");
 runtime.loadChunk("server/chunks/rsc/node_modules_@apollo_experimental-nextjs-app-support_dist_63ded8._.js");
 runtime.loadChunk("server/chunks/rsc/node_modules_@apollo_client_utilities_ff25f1._.js");
 runtime.loadChunk("server/chunks/rsc/node_modules_@apollo_client_react_ea975f._.js");
@@ -17,4 +17,4 @@ runtime.loadChunk("server/chunks/rsc/node_modules_graphql_validation_6da941._.js
 runtime.loadChunk("server/chunks/rsc/node_modules_graphql_index_mjs_3e068e._.js");
 runtime.loadChunk("server/chunks/rsc/node_modules_graphql_2db858._.js");
 runtime.loadChunk("server/chunks/rsc/node_modules_0444c5._.js");
-module.exports = runtime.getOrInstantiateRuntimeModule("[project]/node_modules/next/dist/esm/build/templates/app-page.js/(COMPONENT_0)/[project]/src/app/tags/page.tsx (ecmascript, Next.js server component)/(COMPONENT_1)/[project]/src/app/error.tsx (ecmascript, Next.js server component)/(COMPONENT_2)/[project]/src/app/layout.tsx (ecmascript, Next.js server component)/(COMPONENT_3)/[project]/src/app/not-found.tsx (ecmascript, Next.js server component) (ecmascript, rsc)", CHUNK_PUBLIC_PATH).exports;
+module.exports = runtime.getOrInstantiateRuntimeModule("[project]/node_modules/next/dist/esm/build/templates/app-page.js/(COMPONENT_0)/[project]/src/app/tags/page.tsx (ecmascript, Next.js server component)/(COMPONENT_1)/[project]/src/app/tags/layout.tsx (ecmascript, Next.js server component)/(COMPONENT_2)/[project]/src/app/error.tsx (ecmascript, Next.js server component)/(COMPONENT_3)/[project]/src/app/layout.tsx (ecmascript, Next.js server component)/(COMPONENT_4)/[project]/src/app/not-found.tsx (ecmascript, Next.js server component) (ecmascript, rsc)", CHUNK_PUBLIC_PATH).exports;

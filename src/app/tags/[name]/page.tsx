@@ -43,6 +43,7 @@ export default async function Tag({ params }: Props) {
     <div className="flex flex-col gap-4">
       <h1 className="text-xl uppercase">{tag.name}</h1>
       <p>{tag.createdAt}</p>
+      <p>{tag.body}</p>
     </div>
   );
 }

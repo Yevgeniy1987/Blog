@@ -32,7 +32,7 @@ export default function RootLayout({
         <Header />
 
         <main className="container mx-auto flex-1 py-4">
-          <div className="flex">
+          <div className="flex ">
             <NavigationBar />
             {children}
             <SideBar />

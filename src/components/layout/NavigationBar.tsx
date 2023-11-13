@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NavigationBar() {
   return (
-    <nav className="mx-auto w-1/4 bg-white">
+    <nav className="mx-auto w-1/5">
       <ul className="flex gap-3 flex-col">
         <li>
           <Link href="/">Home</Link>

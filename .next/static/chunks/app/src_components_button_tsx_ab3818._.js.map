@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/src/components/button.tsx"],"sourcesContent":["\"use client\";\r\n\r\nimport classNames from \"classnames\";\r\nimport { useEffect, useState } from \"react\";\r\n\r\nexport const Button = ({props}:Props) => {\r\n  const [button, setButton] = useState();\r\n\r\n \r\n  return (\r\n    <button\r\n    onClick={() => setIsAddLocationOpen((p) => !p)}\r\n    className={classNames(\r\n      \"px-8 py-4 mt-3 border text-black hover:text-blue hover:bg-white border-solid rounded\"\r\n    )}\r\n  > {props}</button>\r\n  );\r\n};\r\n"],"names":[],"mappings":";;;;;;;;;AAAA;;;AAKO,MAAM,SAAS;QAAC,EAAC,KAAK,EAAO;;IAClC,MAAM,CAAC,QAAQ,UAAU,GAAG;IAG5B,qBACE,iKAAC;QACD,SAAS,IAAM,qBAAqB,CAAC,IAAM,CAAC;QAC5C,WAAW,2HACT;;YAEH;YAAE;;;;;;;AAEL;GAZa;KAAA"}},
-    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

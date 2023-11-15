@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const POST = gql`
-  query Post($postId: ID!) {
-    post(where: { id: $postId }) {
+export const SEARCH_POSTS = gql`
+  query SearchPosts($q: String) {
+    posts(where: { title: { contains: $q } }) {
       id
       title
       body

@@ -1,4 +1,3 @@
-import { Timer } from "@/components/Timer";
 import { POST } from "@/graphql/queries/POST_Q";
 import { getClient } from "@/lib/apolloClient";
 import { Metadata } from "next";
@@ -10,6 +9,8 @@ type Props = {
     author: string;
   };
 };
+
+export const revalidate = 1
 
 async function getPost(id: string) {
   const { data } = await getClient().query({
@@ -44,11 +45,12 @@ export default async function Post({ params }: Props) {
 
   return (
     <div className="flex flex-col gap-4">
-      <p>{post.author}</p>
+      <p>{post.author?.nickname}</p>
       <h1 className="text-xl uppercase">{post.title}</h1>
       <p>{post.body}</p>
-      <p>{post.comments}</p>
-      <p>{post.tags}</p>
+      {/* render arrays via .map() */}
+      {/* <p>{post.comments}</p>
+      <p>{post.tags}</p> */}
     </div>
   );
 }

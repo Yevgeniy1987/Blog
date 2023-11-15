@@ -8,9 +8,10 @@ export const COMMENTS = gql`
       createdAt
       author {
         id
-        nickname
+        name
       }
       post {
+        id
         title
         body
       }

@@ -9,6 +9,8 @@ type Tag = {
   createdAt: string;
 };
 
+export const revalidate = 1;
+
 async function getAllTags() {
   const { data } = await getClient().query({ query: TAGS });
 
@@ -21,9 +23,10 @@ export default async function Tags() {
   const tags = await getAllTags();
 
   return (
-    <div className="">
+    <div className="flex-1 flex-wrap">
       <div className="flex justify-between">
         <h1 className="text-xl uppercase">Tags</h1>
+
         <div className="flex">
           <button
             className={classNames(
@@ -66,7 +69,7 @@ export default async function Tags() {
             <div className="flex gap-2">
               <button
                 className={classNames(
-                  "px-6 py-4 mt-3 border text-white border border-solid rounded bg-blue-400 hover:text-blue hover:bg-blue-600 border-solid rounded"
+                  "px-6 py-4 mt-3 text-white border bg-blue-400 hover:text-blue hover:bg-blue-600 border-solid rounded"
                 )}
               >
                 Follow

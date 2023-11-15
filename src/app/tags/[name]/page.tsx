@@ -9,6 +9,8 @@ type Props = {
   };
 };
 
+export const revalidate = 1;
+
 async function getTag(name: string) {
   const { data } = await getClient().query({
     query: TAG,
@@ -31,9 +33,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Tag({ params }: Props) {
-    const tagName = params.name;
+  const tagName = params.name;
 
-    const tag = await getTag(tagName);
+  const tag = await getTag(tagName);
 
   if (!tag) {
     notFound();

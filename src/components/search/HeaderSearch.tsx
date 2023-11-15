@@ -1,43 +1,22 @@
-"use client";
+'use client';
 
-import { SEARCH } from "@/graphql/queries/SEARCH_Q";
-import { getClient } from "@/lib/apolloClient";
-import { FormEvent } from "react";
-
+import { useSearchParams } from 'next/navigation';
 
 export function HeaderSearch() {
-  async function getPostInfo(options: string) {
-    const { data } = await getClient().query({
-      query: SEARCH,
-      variables: { options },
-    });
+  const searchParams = useSearchParams();
 
-    const postInfo = data.posts[0];
+  const query = searchParams.get('q') || "";
 
-    return postInfo;
-  }
-
-  const searchPost = async (e: FormEvent) => {
-    e.preventDefault();
-    const form = e.target as typeof e.target & {
-      postTitle: HTMLInputElement;
-    };
-    const postTitle = form.postTitle.value.trim();
-
-    const post = await getPostInfo(postTitle);
-
-    if (!post) {
-      return "Post with such title doesn't exist";
-    }
-  };
   return (
-    <form className="flex gap-1" onSubmit={searchPost}>
+    <form className="flex gap-1" action="/search">
       <input
         type="search"
-        name="postTitle"
-        className="text-black"
-        placeholder="Filter by sku"
+        name="q"
+        className="text-black px-2 border"
+        placeholder="Search"
+        defaultValue={query}
       />
+
       <button type="submit">&#128269;</button>
     </form>
   );

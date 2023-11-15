@@ -1,4 +1,3 @@
-
 import { POSTS } from "@/graphql/queries/POSTS_Q";
 import { getClient } from "@/lib/apolloClient";
 
@@ -13,6 +12,9 @@ type Post = {
   author: {
     id: string;
     nickname: string;
+  };
+  tags: {
+    name: string;
   };
 };
 
@@ -38,17 +40,20 @@ export default async function Blog() {
       <div>
         <h1 className="text-xl uppercase">Blog page</h1>
 
-        <ol className="mt-4 list-decimal">
+        <div className="mt-4 flex flex-col gap-4">
           {posts.map((post: Post) => (
-            <li key={post.id}>
+            <div key={post.id}>
+              <p>{post.author.nickname}</p>
               <h2>
                 <Link href={`/blog/${post.id}`} className="hover:underline">
                   {post.title}
                 </Link>
               </h2>
-            </li>
+              <p>{post.body}</p>
+              <p>{post.tags.name}</p>
+            </div>
           ))}
-        </ol>
+        </div>
       </div>
     </>
   );

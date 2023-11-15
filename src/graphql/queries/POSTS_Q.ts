@@ -11,6 +11,9 @@ export const POSTS = gql`
         id
         nickname
       }
+      tags{
+        name
+      }
     }
   }
 `;

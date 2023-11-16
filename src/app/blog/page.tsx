@@ -1,9 +1,17 @@
 import { POSTS } from "@/graphql/queries/POSTS_Q";
+import { TAGS } from "@/graphql/queries/TAGS_Q";
+
 import { getClient } from "@/lib/apolloClient";
 
 import { Metadata } from "next";
 import Link from "next/link";
 
+
+type Tag = {
+  id: string;
+  name: string;
+  createdAt: string;
+};
 type Post = {
   id: string;
   title: string;
@@ -32,9 +40,19 @@ async function getAllPosts() {
   return posts;
 }
 
+async function getTags() {
+  const { data } = await getClient().query({
+    query: TAGS,
+  });
+
+  const tags = data?.tags;
+
+  return tags;
+}
+
 export default async function Blog() {
   const posts = await getAllPosts();
-
+  const tags = await getTags();
   return (
     <>
       <div>
@@ -50,7 +68,11 @@ export default async function Blog() {
                 </Link>
               </h2>
               <p>{post.body}</p>
-              <p>{post.tags.name}</p>
+            </div>
+          ))}
+          {tags.map((tag: Tag) => (
+            <div key={tag.id}>
+              <Link href={`/tags/${tag.name}`}></Link>
             </div>
           ))}
         </div>

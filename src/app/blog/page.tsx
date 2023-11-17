@@ -1,17 +1,13 @@
 import { POSTS } from "@/graphql/queries/POSTS_Q";
 import { TAGS } from "@/graphql/queries/TAGS_Q";
 
+
 import { getClient } from "@/lib/apolloClient";
 
 import { Metadata } from "next";
 import Link from "next/link";
 
 
-type Tag = {
-  id: string;
-  name: string;
-  createdAt: string;
-};
 type Post = {
   id: string;
   title: string;
@@ -24,6 +20,12 @@ type Post = {
   tags: {
     name: string;
   };
+};
+
+type Tag = {
+  id: string;
+  name: string;
+  createdAt: string;
 };
 
 export const metadata: Metadata = {
@@ -42,7 +44,8 @@ async function getAllPosts() {
 
 async function getTags() {
   const { data } = await getClient().query({
-    query: TAGS,
+    query: TAGS
+    
   });
 
   const tags = data?.tags;
@@ -52,6 +55,7 @@ async function getTags() {
 
 export default async function Blog() {
   const posts = await getAllPosts();
+  
   const tags = await getTags();
   return (
     <>
@@ -60,19 +64,19 @@ export default async function Blog() {
 
         <div className="mt-4 flex flex-col gap-4">
           {posts.map((post: Post) => (
-            <div key={post.id}>
+            <div key={post.id} className="flex flex-col gap-4 bg-white border-solid rounded p-5">
               <p>{post.author.nickname}</p>
-              <h2>
+              <h2 className="text-5xl">
                 <Link href={`/blog/${post.id}`} className="hover:underline">
                   {post.title}
                 </Link>
               </h2>
-              <p>{post.body}</p>
-            </div>
-          ))}
-          {tags.map((tag: Tag) => (
-            <div key={tag.id}>
-              <Link href={`/tags/${tag.name}`}></Link>
+              
+              {tags.map((tag: Tag) => (
+                <div key={post.id} className="flex">
+                  <Link href={`/tags/${tag.name}`}>{tag.name}</Link>
+                </div>
+              ))}
             </div>
           ))}
         </div>

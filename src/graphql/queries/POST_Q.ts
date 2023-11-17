@@ -21,6 +21,7 @@ export const POST = gql`
       tags {
         name
       }
+      likes
     }
   }
 `;

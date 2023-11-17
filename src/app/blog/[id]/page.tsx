@@ -10,7 +10,13 @@ type Props = {
   };
 };
 
-export const revalidate = 1
+// type Tag = {
+//   id: string;
+//   name: string;
+//   createdAt: string;
+// };
+
+export const revalidate = 1;
 
 async function getPost(id: string) {
   const { data } = await getClient().query({
@@ -51,6 +57,8 @@ export default async function Post({ params }: Props) {
       {/* render arrays via .map() */}
       {/* <p>{post.comments}</p>
       <p>{post.tags}</p> */}
+      
+      
     </div>
   );
 }

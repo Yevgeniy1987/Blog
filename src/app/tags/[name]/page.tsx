@@ -11,7 +11,7 @@ type Props = {
 
 export const revalidate = 1;
 
-async function getTag(name: string) {
+async function getTag(name: String) {
   const { data } = await getClient().query({
     query: TAG,
     variables: { tagName: name }

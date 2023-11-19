@@ -16,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function TagLayout({ children }: { children: React.ReactNode }) {
-  return <div className="flex-1 flex-wrap">{children}</div>;
+  return <div className="flex-1 h-full flex-wrap">{children}</div>;
 }

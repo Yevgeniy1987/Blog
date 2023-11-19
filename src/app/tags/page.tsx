@@ -27,40 +27,21 @@ export default async function Tags() {
       <div className="flex justify-between">
         <h1 className="text-xl uppercase">Tags</h1>
 
-        <div className="flex">
-          <button
-            className={classNames(
-              "px-6 py-4 border text-black hover:hover:bg-gray-400 border-solid rounded"
-            )}
-          >
-            Following tags
+        <div className="bg-white border border-solid border-black">
+          <input
+            className="px-6 py-4"
+            type="search"
+            placeholder="Search for tag"
+          />
+          <button className="hover:bg-gray-100 px-6 py-4" type="submit">
+            &#128269;
           </button>
-          <button
-            className={classNames(
-              "px-6 py-4 border text-black hover:hover:bg-gray-400 border-solid rounded"
-            )}
-          >
-            Hidden tags
-          </button>
-          <div className="bg-white border border-solid border-black">
-            <input
-              className="px-6 py-4"
-              type="search"
-              placeholder="Search for tag"
-            />
-            <button className="hover:bg-gray-100 px-6 py-4" type="submit">
-              &#128269;
-            </button>
-          </div>
         </div>
       </div>
 
       <ol className="mt-4 flex flex-wrap">
         {tags.map((tag: any) => (
-          <li
-            key={tag.name}
-            className="bg-white w-1/4  border rounded p-3"
-          >
+          <li key={tag.name} className="bg-white w-1/4  border rounded p-3">
             <h2>
               <Link href={`/tags/${tag.name}`} className="hover:underline">
                 {tag.name}

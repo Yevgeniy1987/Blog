@@ -50,15 +50,13 @@ export default async function Post({ params }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex w-1/2 h-full flex-col gap-4 bg-white border-solid rounded p-5">
       <p>{post.author?.nickname}</p>
       <h1 className="text-xl uppercase">{post.title}</h1>
       <p>{post.body}</p>
       {/* render arrays via .map() */}
       {/* <p>{post.comments}</p>
       <p>{post.tags}</p> */}
-      
-      
     </div>
   );
 }

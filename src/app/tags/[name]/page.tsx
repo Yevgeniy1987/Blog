@@ -42,7 +42,7 @@ export default async function Tag({ params }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex h-full flex-col gap-4 bg-white border-solid rounded p-5">
       <h1 className="text-xl uppercase">{tag.name}</h1>
       <p>{tag.createdAt}</p>
       <p>{tag.body}</p>

@@ -59,7 +59,7 @@ export default async function Blog() {
   const tags = await getTags();
   return (
     <>
-      <div>
+      <div className="w-1/2">
         <h1 className="text-xl uppercase">Blog page</h1>
 
         <div className="mt-4 flex flex-col gap-4">

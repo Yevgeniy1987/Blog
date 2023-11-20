@@ -7,9 +7,26 @@ type Props = {
   params: {
     id: string;
     author: string;
+    
   };
 };
-
+// type Post = {
+//   id: string;
+//   title: string;
+//   body: string;
+//   createdAt: string;
+//   author: {
+//     id: string;
+//     nickname: string;
+//   };
+//   comments: {
+//     id: string;
+//     body: string;
+//   };
+//   tags: {
+//     name: string;
+//   };
+// };
 // type Tag = {
 //   id: string;
 //   name: string;
@@ -54,6 +71,16 @@ export default async function Post({ params }: Props) {
       <p>{post.author?.nickname}</p>
       <h1 className="text-xl uppercase">{post.title}</h1>
       <p>{post.body}</p>
+
+      {/* {post.map((post: Post) => (
+        <div
+          key={post.id}
+          className="flex flex-col gap-4 bg-white border-solid rounded p-5"
+        >
+          <p>{post.comments?.id}</p>
+          <p>{post.tags?.name}</p>
+        </div>
+      ))} */}
       {/* render arrays via .map() */}
       {/* <p>{post.comments}</p>
       <p>{post.tags}</p> */}

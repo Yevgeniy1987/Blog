@@ -73,7 +73,7 @@ export default async function Blog() {
               </h2>
               
               {tags.map((tag: Tag) => (
-                <div key={post.id} className="flex">
+                <div key={tag.name} className="flex">
                   <Link href={`/tags/${tag.name}`}>{tag.name}</Link>
                 </div>
               ))}

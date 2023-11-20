@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 
-export function HeaderSearch() {
+export function SearchBar() {
   const searchParams = useSearchParams();
 
   const query = searchParams.get('q') || "";

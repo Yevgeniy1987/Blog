@@ -27,7 +27,7 @@ export default function RootLayout({
       <body
         className={classNames(
           inter.className,
-          'min-h-[100vh] flex flex-col py-5 bg-gray-200'
+          'min-h-[100vh] flex flex-col py-5 bg-gray-100'
         )}>
         <ApolloProvider>
           <Header />

@@ -1,32 +1,38 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
+'use client';
+import Link from 'next/link';
 
-import ImgHome from "../../../public/images/icons8-house-16.png";
-import ImgBlog from "../../../public/images/icons8-blog-16.png";
-import ImgTag from "../../../public/images/icons8-tag-16.png";
-
-import ImgAbout from "../../../public/images/icons8-blog-60.png";
+import { HomeIcon } from '@heroicons/react/24/outline';
+import { BookOpenIcon } from '@heroicons/react/24/outline';
+import { InformationCircleIcon } from '@heroicons/react/24/outline';
+import { HashtagIcon } from '@heroicons/react/24/outline';
 
 export default function NavigationBar() {
   return (
     <nav className="w-1/5">
       <ul className="flex gap-3 flex-col">
-        <li className="flex gap-2">
-          <Image src={ImgHome} alt={"home page"} width={30} height={30} />
-          <Link href="/">Home</Link>
+        <li>
+          <Link href="/" className="flex gap-2 items-center">
+            <HomeIcon className="w-6 h-6" />
+            <span>Home</span>
+          </Link>
         </li>
-        <li className="flex gap-2">
-          <Image src={ImgBlog} alt={"blogs page"} width={30} height={30} />
-          <Link href="/blog">Blog</Link>
+        <li>
+          <Link href="/blog" className="flex gap-2 items-center">
+            <BookOpenIcon className="w-6 h-6" />
+            <span>Blog</span>
+          </Link>
         </li>
-        <li className="flex gap-2">
-          <Image src={ImgAbout} alt={"about page"} width={30} height={30} />
-          <Link href="/about">About</Link>
+        <li>
+          <Link href="/about" className="flex gap-2 items-center">
+            <InformationCircleIcon className="w-6 h-6" />
+            <span>About</span>
+          </Link>
         </li>
-        <li className="flex gap-2">
-          <Image src={ImgTag} alt={"tags page"} width={30} height={30} />
-          <Link href="/tags">Tags</Link>
+        <li>
+          <Link href="/tags" className="flex gap-2 items-center">
+            <HashtagIcon className="w-6 h-6" />
+            <span>Tags</span>
+          </Link>
         </li>
       </ul>
     </nav>

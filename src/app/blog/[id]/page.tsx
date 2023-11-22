@@ -1,5 +1,3 @@
-import { COMMENTS } from "@/graphql/queries/COMMENTS_Q";
-import { COMMENT } from "@/graphql/queries/COMMENT_Q";
 import { POST } from "@/graphql/queries/POST_Q";
 import { getClient } from "@/lib/apolloClient";
 import { Metadata } from "next";
@@ -51,7 +49,7 @@ type Comment = {
 
 export const revalidate = 1;
 
-async function getPost(id: Props) {
+async function getPost(id: string) {
   const { data } = await getClient().query({
     query: POST,
     variables: { postId: id },
@@ -62,16 +60,6 @@ async function getPost(id: Props) {
   return post;
 }
 
-async function getComment(commentId: Props) {
-  const { data } = await getClient().query({
-    query: COMMENT,
-    variables: { commentId: commentId },
-  });
-
-  const comment = data?.comment ;
-
-  return comment;
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const postId = params.id;
@@ -85,17 +73,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Post({ params }: Props) {
   const postId = params.id;
-  const commentId = params.commentId;
 
   const post = await getPost(postId);
-  const comment = await getComment(commentId); 
-
   if (!post) {
     notFound();
   }
-  if (!comment) {
-    notFound();
-  } 
+
 
   
   return (
@@ -104,12 +87,12 @@ export default async function Post({ params }: Props) {
       <h1 className="text-xl uppercase">{post.title}</h1>
       <p>{post.body}</p>
 
-      {comment.map((comment: Comment) => (
+      {post.comments.map((comment: Comment) => (
         <div
           key={comment.id}
           className="flex flex-col gap-4 bg-white border-solid rounded p-5"
         >
-          <p>{comment?.id}</p>
+          <p>{comment?.author?.name || 'Anonymous'}</p>
           <p>{comment?.body}</p>
           {/* <p>{post.tags?.name}</p> */}
         </div>

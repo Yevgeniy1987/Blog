@@ -3,3 +3,6 @@
 @tailwind utilities;
 
 
+.post-card{
+    width: calc((100% - 3rem) / 4);
+}

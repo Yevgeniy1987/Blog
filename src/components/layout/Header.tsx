@@ -11,7 +11,6 @@ export default function Header() {
     <header className="bg-white">
       <div className="py-5 container mx-auto flex">
         <Link href="/">
-          {/* TODO: @Zhenya - implement via next/image component */}
           <Image src={Img} alt={"Logo"} width={40} height={40} />
         </Link>
 

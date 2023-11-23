@@ -2,6 +2,7 @@ import { TAGS } from "@/graphql/queries/TAGS_Q";
 import { getClient } from "@/lib/apolloClient";
 import classNames from "classnames";
 import Link from "next/link";
+import { SearchTagsBar } from "../../components/layout/tagSearch/SearchTagsBar";
 
 type Tag = {
   id: string;
@@ -28,14 +29,7 @@ export default async function Tags() {
         <h1 className="text-xl uppercase">Tags</h1>
 
         <div className="bg-white border border-solid border-black">
-          <input
-            className="px-6 py-4"
-            type="search"
-            placeholder="Search for tag"
-          />
-          <button className="hover:bg-gray-100 px-6 py-4" type="submit">
-            &#128269;
-          </button>
+          <SearchTagsBar />
         </div>
       </div>
 
@@ -47,22 +41,6 @@ export default async function Tags() {
                 {tag.name}
               </Link>
             </h2>
-            <div className="flex gap-2">
-              <button
-                className={classNames(
-                  "px-2 py-1 mt-3 text-white border bg-blue-400 hover:text-blue hover:bg-blue-600 border-solid rounded"
-                )}
-              >
-                Follow
-              </button>
-              <button
-                className={classNames(
-                  "px-2 py-1 mt-3 border text-black hover:text-blue hover:bg-blue-100 border-solid rounded"
-                )}
-              >
-                Hide
-              </button>
-            </div>
           </li>
         ))}
       </ol>

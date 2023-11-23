@@ -26,24 +26,40 @@ export default async function Tags() {
   return (
     <div className="flex-1 flex-wrap">
       <div className="flex justify-between">
-        <h1 className="text-xl uppercase">Tags</h1>
+        <h1 className="text-xl uppercase font-bold">Tags</h1>
 
         <div className="bg-white border border-solid border-black">
           <SearchTagsBar />
         </div>
       </div>
 
-      <ol className="mt-4 flex flex-wrap gap-4">
+      <div className="mt-4 flex flex-wrap gap-4">
         {tags.map((tag: any) => (
-          <li key={tag.name} className="bg-white post-card border rounded p-3">
-            <h2>
+          <div key={tag.name} className="bg-white post-card border rounded p-3">
+            <h2 className="font-bold">
               <Link href={`/tags/${tag.name}`} className="hover:underline">
-                {tag.name}
+                #{tag.name}
               </Link>
             </h2>
-          </li>
+            <div className="flex gap-2">
+              <button
+                className={classNames(
+                  "px-2 py-1 mt-3 text-white border bg-blue-400 hover:text-blue hover:bg-blue-600 border-solid rounded"
+                )}
+              >
+                Follow
+              </button>
+              <button
+                className={classNames(
+                  "px-2 py-1 mt-3 text-black hover:text-blue hover:bg-blue-100 border-solid rounded"
+                )}
+              >
+                Hide
+              </button>
+            </div>
+          </div>
         ))}
-      </ol>
+      </div>
     </div>
   );
 }

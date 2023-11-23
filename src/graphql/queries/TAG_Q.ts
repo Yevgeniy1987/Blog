@@ -8,7 +8,14 @@ export const TAG = gql`
       posts {
         id
         title
+        body
+        author {
+          id
+          nickname
+        }
       }
     }
   }
 `;
+
+      

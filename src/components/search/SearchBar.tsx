@@ -8,15 +8,14 @@ export function SearchBar() {
   const query = searchParams.get('q') || "";
 
   return (
-    <form className="flex gap-1" action="/search">
+    <form className="flex gap-1 p-2 border" action="/search">
       <input
         type="search"
         name="q"
-        className="text-black px-2 border"
+        className="text-black px-2"
         placeholder="Search"
         defaultValue={query}
       />
-
       <button type="submit">&#128269;</button>
     </form>
   );

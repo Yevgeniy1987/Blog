@@ -11,11 +11,11 @@ export function SearchTagsBar() {
       <input
         type="search"
         name="q"
-        className="text-black px-2 border"
+        className="text-black px-2 border-0"
         placeholder="Search"
         defaultValue={query}
       />
-      <button className="hover:bg-gray-100 px-6 py-4" type="submit">
+      <button className="hover:bg-gray-100 px-4 py-2" type="submit">
         &#128269;
       </button>
     </form>
